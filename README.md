@@ -14,3 +14,30 @@ Components:
 - Each VM must have `node_exporter` running and scraped by the Prometheus server
 - Alert-manager will send email if CPU or Memory are above 80% on the VMs
 - Alert-manager will send email if either of Nginx or HAproxy are down or not responding to HTTP requests
+
+The end result should be similar to the following diagram:
+
+```text
+                                   VM2 (Web server)
+                                     +---------+
+                         +-------->  |  Nginx  |
+VM1 (LB and Prometheus)  |           +---------+
+    +------------+       |
+    |  HAProxy   +-------+
+    +------------+       |         VM3 (Web server)
+                         |           +---------+
+                         +-------->  |  Nginx  |
+                                     +---------+
+```
+
+---
+
+**Tools used in the LAB:**
+
+- [HAProxy](http://haproxy.1wt.eu)
+- [Nginx](http://nginx.org/en/download.html)
+- [Prometheus](https://prometheus.io)
+- [Prometheus `node_exporter`](https://github.com/prometheus/node_exporter)
+- [Puppet](http://puppetlabs.com/puppet/puppet-open-source)
+- [Vagrant](http://www.vagrantup.com)
+- [Virtualbox](https://www.virtualbox.org)
