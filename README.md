@@ -32,6 +32,14 @@ VM1 (LB and Prometheus)  |           +---------+
 
 ---
 
+ **Setup & Starting**
+
+- The command `vagrant up` in terminal will run the project.
+- You can now view the web1 from <http://192.168.100.20:80> 
+- You can now view the web2 from <http://192.168.100.21:80> 
+- Haproxy load balancer <http://192.168.100.10:9000/stats>
+- Prometheus + Alertmanager <http://192.168.100.10:9090>
+
 **Tools used in the LAB:**
 
 - [HAProxy](http://haproxy.1wt.eu)
